@@ -39,7 +39,45 @@ function playRound (playerSelection, computerSelection) {
         } else {
             return "A tie!";
         }
+    }
+}
+
+function game() {
+    let playerScore = 0;
+    let computerScore = 0;
+    for (let i = 1; i <= 5; i++) {
+        let playerSelection = prompt();
+        while (playerSelection.toLowerCase() != "rock" &&  
+        playerSelection.toLowerCase() != "paper" &&
+        playerSelection.toLowerCase() != "scissors") {
+            console.log("Invalid choice. Chose between Rock, Paper or Scissors.");
+            playerSelection = prompt();
+            if (playerSelection == "break") {
+                break;
+            } 
+        }
+        let computerSelection = getComputerChoice();
+        let roundResult = playRound(playerSelection, computerSelection);
+        console.log(roundResult);
+        if (roundResult == "You win! Rock beats Scissors" || 
+        roundResult == "You win! Paper beats Rock" || 
+        roundResult == "You win! Scissors beats Paper") {
+            playerScore++;
+        } else if (roundResult == "You lose! Paper beats Rock" ||
+        roundResult == "You lose! Scissors beats Paper" ||
+        roundResult == "You lose! Rock beats Scissors") {
+            computerScore++;
+        } else {
+            playerScore++;
+            computerScore++;
+        }
+    }
+    
+    if (playerScore == computerScore) {
+        console.log("A tie! Try again.");
+    } else if (playerScore > computerScore) {
+        console.log("Congratulations. You Win!");
     } else {
-        return "Unvalid choice. Chose between Rock, Paper or Scissors."
+        console.log("You lose! Better luck next time.")
     }
 }

@@ -46,12 +46,12 @@ function game() {
     let playerScore = 0;
     let computerScore = 0;
     for (let i = 1; i <= 5; i++) {
-        let playerSelection = prompt();
+        let playerSelection = prompt("Choose between Rock, Paper or Scissors");
         while (playerSelection.toLowerCase() != "rock" &&  
         playerSelection.toLowerCase() != "paper" &&
         playerSelection.toLowerCase() != "scissors") {
             console.log("Invalid choice. Chose between Rock, Paper or Scissors.");
-            playerSelection = prompt();
+            playerSelection = prompt("Choose between Rock, Paper or Scissors");
             if (playerSelection == "break") {
                 break;
             } 

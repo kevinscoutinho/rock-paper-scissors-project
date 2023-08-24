@@ -3,9 +3,29 @@
     <head>
         <meta charset="utf-8">
         <title>Rock Papers Scissors Project</title>
-        <script src="./script.js"></script>
+        <script src="./script.js" defer></script>
     </head>
     <body>
-        <p>Rock Paper Scissors game. Type game() on the console to play it.</p>
+        <div class="heading">
+            <p>Rock Paper Scissors Game</p>
+            <p>Click on your choice</p>
+        </div>  
+        <div class="buttons-section">
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissors">Scissors</button>
+        </div>
+        <div class="main-results">
+            <div class="player-score-container">
+                <p class="player">Player Score:</p>
+                <p class="player-score"></p>
+            </div>
+            <div class="computer-score-container">
+                <p class="computer">Computer Score:</p>
+                <p class="computer-score"></p>
+            </div>
+        </div>
+        <div class="partial-result">
+        </div>
     </body>
 </html>

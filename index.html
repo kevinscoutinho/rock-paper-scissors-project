@@ -4,16 +4,17 @@
         <meta charset="utf-8">
         <title>Rock Papers Scissors Project</title>
         <script src="./script.js" defer></script>
+        <link rel="stylesheet" href="./style.css">
     </head>
     <body>
         <div class="heading">
-            <p>Rock Paper Scissors Game</p>
-            <p>Click on your choice</p>
+            <h1>Rock Paper Scissors Game</h1>
+            <p class="instructions">Click on your choice</p>
         </div>  
         <div class="buttons-section">
-            <button id="rock">Rock</button>
-            <button id="paper">Paper</button>
-            <button id="scissors">Scissors</button>
+            <button id="rock"></button>
+            <button id="paper"></button>
+            <button id="scissors"></button>
         </div>
         <div class="main-results">
             <div class="player-score-container">
@@ -25,7 +26,8 @@
                 <p class="computer-score"></p>
             </div>
         </div>
-        <div class="partial-result">
+        <div class="partial-result-container">
+            <p class="partial-result"></p>
         </div>
     </body>
 </html>

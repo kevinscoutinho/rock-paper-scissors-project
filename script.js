@@ -69,7 +69,7 @@ function verifyWinner() {
 
 //targeting buttons and divs to receive the player choice and show the result//
 const buttons = document.querySelectorAll('button');
-const partialResult = document.querySelector('div.partial-result');
+const partialResult = document.querySelector('p.partial-result');
 const playerScore = document.querySelector('p.player-score');
 const computerScore = document.querySelector('p.computer-score');
 

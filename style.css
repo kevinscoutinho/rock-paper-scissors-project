@@ -1,0 +1,87 @@
+html {
+    background: url(./images/paper-texture-2.jpg);
+    background-color: #ddc6a4;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    flex: 1 1 100%;
+}
+
+h1 {
+    color: white;
+    font-size: 40px;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+}
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.buttons-section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+button {
+    flex: 0 0 150px;
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+    border-radius: 50%;
+    transition: all .07s ease;
+}
+
+button.selected {
+    scale: (1.1);
+}
+
+button#rock {
+    background-image: url(./images/rock.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+button#paper {
+    background-image: url(./images/paper.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+button#scissors {
+    background-image: url(./images/scissors.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+div.main-results {
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+div.player-score-container,
+div.computer-score-container {
+    flex-direction: row;
+}
+
+p.player-score,
+p.computer-score {
+    margin-left: 20px;
+}
+
+
+
+p {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgb(0, 0, 0);
+}
+

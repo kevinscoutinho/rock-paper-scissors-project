@@ -6,10 +6,6 @@ html {
     font-family: 'Courier New', Courier, monospace;
 }
 
-body {
-    flex: 1 1 100%;
-}
-
 h1 {
     color: white;
     font-size: 40px;
@@ -36,10 +32,18 @@ button {
     margin: 20px;
     border-radius: 50%;
     transition: all .07s ease;
+    border-style: none;
 }
 
-button.selected {
-    scale: (1.1);
+button:hover {
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(1.1);
+    border-style: solid;
+    border-color: red;
+    border-width: 1px;
 }
 
 button#rock {
@@ -74,8 +78,6 @@ p.player-score,
 p.computer-score {
     margin-left: 20px;
 }
-
-
 
 p {
     color: white;

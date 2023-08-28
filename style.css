@@ -1,7 +1,7 @@
 html {
-    background: url(./images/paper-texture-2.jpg);
+    background: url(./images/fingers-149295_1920.png), url(./images/paper-texture-4.jpg);
     background-color: #ddc6a4;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat, repeat;
     background-size: cover;
     font-family: 'Courier New', Courier, monospace;
 }
@@ -15,6 +15,7 @@ h1 {
 div {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
 }
 
@@ -79,6 +80,12 @@ p.computer-score {
     margin-left: 20px;
 }
 
+div.choice {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 p {
     color: white;
     font-size: 40px;
@@ -87,3 +94,9 @@ p {
     -webkit-text-stroke-color: rgb(0, 0, 0);
 }
 
+img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}

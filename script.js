@@ -13,12 +13,40 @@ function getComputerChoice() {
 
 //function that compare the user's choice to the computer choice to return the winner
 function playRound (e) {
+    const computerChoiceImage = document.querySelector('div.computer-choice-image');
+    const playerChoiceImage = document.querySelector('div.player-choice-image');
     let playerSelection = e.target.id.toLowerCase();
     let computerSelection = getComputerChoice();
+    
+    if (document.querySelector('div.computer-choice-image img')) {
+        computerChoiceImage.firstElementChild.remove();
+    }
+
+    if (document.querySelector('div.player-choice-image img')) {
+        playerChoiceImage.firstElementChild.remove();
+    }
+
+    if (computerSelection == "rock") {
+        computerChoiceImage.appendChild(imgRock);
+    } else if (computerSelection == "paper") {
+        computerChoiceImage.appendChild(imgPaper);
+    } else {
+        computerChoiceImage.appendChild(imgScissors);
+    }
+
+    if (playerSelection == "rock") {
+        playerChoiceImage.appendChild(imgRock2);
+    } else if (playerSelection == "paper") {
+        playerChoiceImage.appendChild(imgPaper2);
+    } else {
+        playerChoiceImage.appendChild(imgScissors2);
+    }
+
     if (Number(computerScore.textContent) === 5 || Number(playerScore.textContent) === 5) {
         computerScore.textContent = 0;
         playerScore.textContent = 0;
     }
+
     if (playerSelection == "rock") {
         if (computerSelection == "rock") {
             partialResult.textContent = "A tie!";
@@ -80,4 +108,17 @@ buttons.forEach((button) => {
     button.addEventListener('click', playRound);
 });
 
+const imgRock = new Image();
+const imgPaper = new Image();
+const imgScissors = new Image();
+const imgRock2 = new Image();
+const imgPaper2 = new Image();
+const imgScissors2 = new Image();
 
+
+imgRock.src = "./images/rock.jpg";
+imgPaper.src = "./images/paper.jpg";
+imgScissors.src = "./images/scissors.jpg";
+imgRock2.src = "./images/rock.jpg";
+imgPaper2.src = "./images/paper.jpg";
+imgScissors2.src = "./images/scissors.jpg";

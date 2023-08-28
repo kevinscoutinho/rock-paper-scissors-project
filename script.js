@@ -1,7 +1,7 @@
 
 //function that return the computer choice, it choses randomly between rock, paper and scissors
 function getComputerChoice() {
-    let randomNumber = Math.floor(Math.random() * 3) + 1;   //create a random number between and equal to 1 and 3
+    let randomNumber = Math.floor(Math.random() * 3) + 1;
     if (randomNumber === 1) {
         return "rock";
     } else if (randomNumber === 2) {
@@ -9,6 +9,10 @@ function getComputerChoice() {
     } else {
         return "scissors";
     }
+}
+
+function capitalizeFirstLetter(string) {
+    return string.substring(0,1).toUpperCase() + string.substring(1);
 }
 
 //function that compare the user's choice to the computer choice to return the winner
@@ -47,42 +51,20 @@ function playRound (e) {
         playerScore.textContent = 0;
     }
 
-    if (playerSelection == "rock") {
-        if (computerSelection == "rock") {
-            partialResult.textContent = "A tie!";
-        } else if (computerSelection == "paper") {
-            computerScore.textContent = Number(computerScore.textContent) + 1;
-            partialResult.textContent = "You lose! Paper beats Rock";
-            verifyWinner();
-        } else {
-            partialResult.textContent = "You win! Rock beats Scissors";
-            playerScore.textContent = Number(playerScore.textContent) + 1;
-            verifyWinner();
-        }
-    } else if (playerSelection == "paper") {
-        if (computerSelection == "rock") {
-            partialResult.textContent = "You win! Paper beats Rock";
-            playerScore.textContent = Number(playerScore.textContent) + 1;
-            verifyWinner();
-        } else if (computerSelection == "paper") {
-            partialResult.textContent = "A tie!";
-        } else {
-            computerScore.textContent = Number(computerScore.textContent) + 1;
-            partialResult.textContent = "You lose! Scissors beats Paper";
-            verifyWinner();
-        }
-    } else if (playerSelection == "scissors") {
-        if (computerSelection == "rock") {
-            computerScore.textContent = Number(computerScore.textContent) + 1;
-            partialResult.textContent = "You lose! Rock beats Scissors";
-            verifyWinner();
-        } else if (computerSelection == "paper") {
-            playerScore.textContent = Number(playerScore.textContent) + 1;
-            partialResult.textContent = "You win! Scissors beats Paper";
-            verifyWinner();
-        } else {
-            partialResult.textContent = "A tie!";
-        }
+    if (playerSelection == computerSelection) {
+        partialResult.textContent = "A tie!";
+    } else if (
+        computerSelection == 'rock' && playerSelection == 'scissors' ||
+        computerSelection == 'paper' && playerSelection == 'rock' ||
+        computerSelection == 'scissors' && playerSelection == 'paper') 
+    {
+        computerScore.textContent = Number(computerScore.textContent) + 1;
+        partialResult.textContent = `You lose! ${capitalizeFirstLetter(computerSelection)} beats ${capitalizeFirstLetter(playerSelection)}`;
+        verifyWinner();
+    } else {
+        playerScore.textContent = Number(playerScore.textContent) + 1;
+        partialResult.textContent = `You win! ${capitalizeFirstLetter(playerSelection)} beats ${capitalizeFirstLetter(computerSelection)}`;
+        verifyWinner();
     }
 }
 
@@ -108,6 +90,7 @@ buttons.forEach((button) => {
     button.addEventListener('click', playRound);
 });
 
+//images of the players choices 
 const imgRock = new Image();
 const imgPaper = new Image();
 const imgScissors = new Image();
